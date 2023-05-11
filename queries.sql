@@ -83,4 +83,8 @@ INNER JOIN owners
 ON A.owner_id = owners.id
 WHERE owners.full_name = 'Melody Pond';
 
+SELECT A.id, A.name FROM animals A
+INNER JOIN species
+ON A.species_id = species.id
+WHERE species.name = 'Pokemon';
 
