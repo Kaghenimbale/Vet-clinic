@@ -7,7 +7,9 @@ date_of_birth DATE,
 escape_attempts INT,
 neutered BIT,
 weight_kg DECIMAL,
-species VARCHAR
+PRIMARY KEY(id),
+CONSTRAINT fk_species FOREIGN KEY(id) REFERENCES species(id) ON DELETE CASCADE,
+CONSTRAINT fk_owner FOREIGN KEY(id) REFERENCES owners(id) ON DELETE CASCADE
 );
 
 CREATE TABLE owners(
