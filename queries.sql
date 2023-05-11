@@ -88,3 +88,7 @@ INNER JOIN species
 ON A.species_id = species.id
 WHERE species.name = 'Pokemon';
 
+SELECT O.id, full_name, name FROM owners O
+LEFT JOIN animals
+ON O.id = animals.owner_id;
+
