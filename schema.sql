@@ -39,26 +39,3 @@ FOREIGN KEY (owner_id)
 REFERENCES owners(id)
 ON DELETE CASCADE;
 
--- Create vets table
-
-CREATE TABLE vets(
-id INT GENERATED ALWAYS AS IDENTITY,
-name VARCHAR(50),
-age INT,
-date_of_graduation DATE
-);
-
-CREATE TABLE specializations(
-species_id INT REFERENCES species(id),
-vet_id INT REFERENCES vets(id),
-PRIMARY KEY(species_id, vet_id)
-);
-
-CREATE TABLE visits(
-id INT GENERATED ALWAYS AS IDENTITY,
-animal_id INT REFERENCES animals(id),
-vet_id INT REFERENCES vets(id),
-visit_date DATE,
-PRIMARY KEY(id)                     
-);
-
