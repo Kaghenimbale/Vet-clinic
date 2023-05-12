@@ -177,3 +177,22 @@ ON animals.id = visits.animal_id
 JOIN vets
 ON visits.vet_id = vets.id
 ORDER BY visits.date DESC LIMIT 1;
+
+SELECT COUNT(*) AS "VISITS TO VETS NOT SPECIALISED IN THAT SPECIES"
+FROM visits
+JOIN vets
+ON visits.vet_id = vets.id
+JOIN animals
+ON visits.animal_id = animals.id
+LEFT JOIN specializations
+ON vets.id = specializations.vet_id AND animals.species_id = specializations.species_id
+WHERE specializations.species_id IS NULL;
+
+SELECT MAX(species.name) AS "SPECIES MAISY SMITH SHOULD CONSIDER"
+FROM animals
+JOIN visits
+ON animals.id = visits.animal_id
+JOIN species
+ON animals.species_id = species.id
+WHERE visits.vet_id = (SELECT id FROM vets WHERE name = 'Maisy Smith')
+GROUP BY species.id ORDER BY COUNT(*) DESC LIMIT 1;
