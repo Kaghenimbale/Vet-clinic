@@ -119,3 +119,14 @@ ON A.owner_id = owners.id
 GROUP BY full_name
 ORDER BY "NUMBER OF ANIMALS OWNED" DESC LIMIT 1;
 
+-- Visists 
+
+SELECT A.name, vets.name, V.visit_date
+FROM visits V
+JOIN animals A
+ON V.animal_id = A.id
+JOIN vets
+ON V.vet_id = vets.id
+WHERE vets.name = 'William Tatcher'
+ORDER BY V.visit_date DESC LIMIT 1;
+
