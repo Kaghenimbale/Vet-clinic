@@ -154,3 +154,26 @@ ON visits.animal_id = animals.id
 JOIN vets
 ON vets.id = visits.vet_id
 WHERE vets.name = 'Stephanie Mendez' AND visits.visit_date BETWEEN 'April 1, 2020' AND 'August 30, 2020';
+
+SELECT animals.name, COUNT(visits.animal_id) AS VISITS
+FROM animals
+JOIN visits
+ON animals.id = visits.animal_id
+GROUP BY animals.id
+ORDER BY VISITS DESC LIMIT 1;
+
+SELECT A.name, vets.name, V.visit_date
+FROM visits V
+JOIN animals A
+ON V.animal_id = A.id
+JOIN vets
+ON V.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith'
+
+SELECT animals.* AS ANIMAL_INFORMATION, vets.* AS VET_INFORMATION, visits.date
+FROM animals
+JOIN visits
+ON animals.id = visits.animal_id
+JOIN vets
+ON visits.vet_id = vets.id
+ORDER BY visits.date DESC LIMIT 1;
