@@ -203,6 +203,6 @@ EXPLAIN ANALYSE SELECT DISTINCT id, animal_id FROM visits WHERE vet_id = 2 LIMIT
 
 EXPLAIN ANALYSE SELECT DISTINCT COUNT(*) FROM visits WHERE animal_id = 4;
 
-EXPLAIN ANALYSE SELECT DISTINCT full_name FROM owners where email = 'owner_18327@mail.com';;
+EXPLAIN ANALYSE SELECT DISTINCT full_name FROM owners where email = 'owner_18327@mail.com';
 
  
