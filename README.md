@@ -24,6 +24,8 @@
 
 # 📖 [Vet_clinic_Database] <a name="about-project"></a>
 
+![Screenshot from 2023-05-16 10-12-00](https://github.com/Kaghenimbale/Vet-clinic/assets/109277351/b0a5426e-6a28-4182-93b4-71af93118d81)
+
 **[Vet_clinic_Database]** is a project that use a relational database to create the initial data structure for a vet clinic. I will create a table to store animals' information, insert some data into it, and query it.
 
 ## 🛠 Built With <a name="built-with"></a>
